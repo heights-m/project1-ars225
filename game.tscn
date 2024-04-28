@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgv6qtuurdffh"]
+[gd_scene load_steps=3 format=3 uid="uid://dgv6qtuurdffh"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_acj1b"]
 [ext_resource type="PackedScene" uid="uid://bjp2bbps1ywj0" path="res://Creation/Creation.tscn" id="1_vmol8"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_acj1b")
 
 [node name="Area2D" parent="." instance=ExtResource("1_vmol8")]
 position = Vector2(592, 409)
+
+[node name="Hands" type="Node2D" parent="."]
+
+[node name="Items" type="Area2D" parent="."]
