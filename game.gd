@@ -13,9 +13,9 @@ func _ready():
 		itemtest.global_position = Vector2(1, 1)
 		get_node("Items").add_child(itemtest)
 
-func _input(event):
-	if event.is_action("MouseClick"):
-		print("MC: ", event.position)
+#func _input(event):
+	#if event.is_action("MouseClick"):
+		#print("MC: ", event.position)
 
 func drawHands():
 	var hand = hands.instantiate()
