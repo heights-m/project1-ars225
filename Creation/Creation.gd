@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	if item_entered && !item.selected:
 			print("dropped")
-			
+			item_entered =  false
 
 
 func _on_area_entered(area):
