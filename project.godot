@@ -32,6 +32,12 @@ MouseClick={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="background"
+2d_physics/layer_2="creation"
+2d_physics/layer_3="item"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -1,8 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://bjp2bbps1ywj0"]
+[gd_scene load_steps=29 format=3 uid="uid://bjp2bbps1ywj0"]
 
+[ext_resource type="Texture2D" uid="uid://ds11pkirdpoxd" path="res://clip/meat.png" id="2_buodn"]
 [ext_resource type="Texture2D" uid="uid://l7e7nxofxhex" path="res://Creation/Sprites/Start/Timeline 1_0001.png" id="2_ia3jo"]
+[ext_resource type="Texture2D" uid="uid://c3lth76rcnd33" path="res://clip/soul1.png" id="3_1cs4u"]
 [ext_resource type="Texture2D" uid="uid://h708r4qro7lq" path="res://Creation/Sprites/Start/Timeline 1_0002.png" id="3_jje2e"]
 [ext_resource type="Texture2D" uid="uid://bmbs81744pm17" path="res://Creation/Sprites/Start/Timeline 1_0003.png" id="4_3l6b1"]
+[ext_resource type="Texture2D" uid="uid://pcpo3m20mqnj" path="res://clip/soul.png" id="4_wa35g"]
 [ext_resource type="Texture2D" uid="uid://b41tdtrra31le" path="res://Creation/Sprites/Start/Timeline 1_0004.png" id="5_3m5lm"]
 [ext_resource type="Texture2D" uid="uid://rje576a4004k" path="res://Creation/Sprites/Start/Timeline 1_0005.png" id="6_xj58q"]
 [ext_resource type="Texture2D" uid="uid://wskgowevpcha" path="res://Creation/Sprites/Start/Timeline 1_0006.png" id="7_bx152"]
@@ -26,6 +29,25 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1tx3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_buodn")
+}],
+"loop": true,
+"name": &"meat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1cs4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wa35g")
+}],
+"loop": true,
+"name": &"soul",
+"speed": 2.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_ia3jo")
@@ -102,11 +124,15 @@ animations = [{
 radius = 250.06
 
 [node name="Area2D" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("24_gwv2s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t1tx3")
-animation = &"start"
+animation = &"soul"
+frame = 1
+frame_progress = 0.0531007
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_msstj")

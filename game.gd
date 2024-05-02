@@ -9,9 +9,6 @@ const items = preload("res://Items/items.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 		drawHands()
-		var itemtest = items.instantiate()
-		itemtest.global_position = Vector2(1, 1)
-		get_node("Items").add_child(itemtest)
 
 #func _input(event):
 	#if event.is_action("MouseClick"):

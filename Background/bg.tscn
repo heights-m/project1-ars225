@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi4vpf5g15ud5"]
+
+[ext_resource type="Texture2D" uid="uid://bk71t72m4vuvq" path="res://Background/begin_bg.png" id="1_gwosd"]
+[ext_resource type="Script" path="res://Background/bg.gd" id="1_nomgg"]
+[ext_resource type="Texture2D" uid="uid://cirvhsev7j7o1" path="res://clip/ocean.png" id="3_m2p6c"]
+[ext_resource type="Texture2D" uid="uid://b5m7yy85mlp1g" path="res://clip/meathell.png" id="4_vogxo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhbo8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gwosd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m2p6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vogxo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyh4c"]
+size = Vector2(1200, 579)
+
+[node name="bg" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_nomgg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qhbo8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -110.5)
+shape = SubResource("RectangleShape2D_gyh4c")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
