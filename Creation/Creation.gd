@@ -14,7 +14,7 @@ var dict = {"start": {0: "blob", 1: "soul", 2: "plant", 3:"meat"}, "blob": {0: "
 			"soul": {0: "", 1: "you", 2: "whimsy", 3:"creature"}, "plant": {0: "", 1: "meat", 2: "shift", 3:""},
 			"meat": {0: "", 1: "you", 2: "", 3:"burden"}, "burden": {0: "", 1: "you", 2: "", 3:"bldblob"},
 			"you": {0: "", 1: "burden", 2: "soul", 3:"meat"}, "whimsy": {0: "", 1: "creature", 2: "", 3:"you"},
-			"creature": {0: "", 1: "you", 2: "shift", 3:"meat"}, "bldblob": {0: "bubble", 1: "burden", 2: "", 3:""}
+			"creature": {0: "", 1: "you", 2: "shift", 3:"meat"}, "bldblob": {0: "blob", 1: "burden", 2: "", 3:""}
 	}
 var crtn_dict = {"blob": false, "soul": false, "plant": false, "meat": false, "burden": false,
 				"you": false, "whimsy": false, "creature": false, "bldblob": false}
