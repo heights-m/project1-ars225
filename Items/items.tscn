@@ -1,16 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpvj4quvmdf0e"]
+[gd_scene load_steps=8 format=3 uid="uid://dpvj4quvmdf0e"]
 
 [ext_resource type="Script" path="res://Items/items.gd" id="1_fxnx7"]
-[ext_resource type="Texture2D" uid="uid://dn2tb5x5c4otl" path="res://Items/Illustration.png" id="2_fc731"]
+[ext_resource type="Texture2D" uid="uid://cpkf64piebptv" path="res://Items/water.png" id="2_ykcxm"]
+[ext_resource type="Texture2D" uid="uid://bocxqxmlp6fn5" path="res://Items/heart.png" id="3_ijmxx"]
+[ext_resource type="Texture2D" uid="uid://j7ba0xgj7yi4" path="res://Items/light.png" id="4_omqsg"]
+[ext_resource type="Texture2D" uid="uid://5sout2eb75o6" path="res://Items/blood.png" id="5_xnk2f"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ci8y5"]
-radius = 52.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8t7bo"]
+size = Vector2(112, 104)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0iij6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_fc731")
+"texture": ExtResource("2_ykcxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ijmxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_omqsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xnk2f")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +35,7 @@ collision_mask = 3
 script = ExtResource("1_fxnx7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ci8y5")
+shape = SubResource("RectangleShape2D_8t7bo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0iij6")

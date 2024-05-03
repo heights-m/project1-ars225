@@ -3,10 +3,12 @@ extends Area2D
 @onready var items_sprite = $AnimatedSprite2D
 var selected = false
 var origin = Vector2()
+var f
+var iscreation = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	items_sprite.frame = 0
+	items_sprite.frame = f
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,6 +27,7 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action("MouseClick") and not event.is_pressed():
 		selected = false
+		
 		
 		
 

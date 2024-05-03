@@ -1,12 +1,17 @@
-[gd_scene load_steps=29 format=3 uid="uid://bjp2bbps1ywj0"]
+[gd_scene load_steps=36 format=3 uid="uid://bjp2bbps1ywj0"]
 
+[ext_resource type="Texture2D" uid="uid://br8ebddcucljd" path="res://clip/bobble.png" id="2_2wwcn"]
+[ext_resource type="Texture2D" uid="uid://bxjcuolma7n7o" path="res://clip/bldblob.png" id="2_aqi33"]
 [ext_resource type="Texture2D" uid="uid://ds11pkirdpoxd" path="res://clip/meat.png" id="2_buodn"]
 [ext_resource type="Texture2D" uid="uid://l7e7nxofxhex" path="res://Creation/Sprites/Start/Timeline 1_0001.png" id="2_ia3jo"]
 [ext_resource type="Texture2D" uid="uid://c3lth76rcnd33" path="res://clip/soul1.png" id="3_1cs4u"]
+[ext_resource type="Texture2D" uid="uid://u03pd7fgf4k" path="res://clip/burden.png" id="3_iqaai"]
 [ext_resource type="Texture2D" uid="uid://h708r4qro7lq" path="res://Creation/Sprites/Start/Timeline 1_0002.png" id="3_jje2e"]
 [ext_resource type="Texture2D" uid="uid://bmbs81744pm17" path="res://Creation/Sprites/Start/Timeline 1_0003.png" id="4_3l6b1"]
+[ext_resource type="Texture2D" uid="uid://hwgbhs3x2vl6" path="res://clip/lilguy.png" id="4_l023o"]
 [ext_resource type="Texture2D" uid="uid://pcpo3m20mqnj" path="res://clip/soul.png" id="4_wa35g"]
 [ext_resource type="Texture2D" uid="uid://b41tdtrra31le" path="res://Creation/Sprites/Start/Timeline 1_0004.png" id="5_3m5lm"]
+[ext_resource type="Texture2D" uid="uid://cb7f3dwwejiss" path="res://clip/plant.png" id="6_ndom3"]
 [ext_resource type="Texture2D" uid="uid://rje576a4004k" path="res://Creation/Sprites/Start/Timeline 1_0005.png" id="6_xj58q"]
 [ext_resource type="Texture2D" uid="uid://wskgowevpcha" path="res://Creation/Sprites/Start/Timeline 1_0006.png" id="7_bx152"]
 [ext_resource type="Texture2D" uid="uid://bnpm0afvevcdn" path="res://Creation/Sprites/Start/Timeline 1_0007.png" id="8_h6oaw"]
@@ -26,15 +31,57 @@
 [ext_resource type="Texture2D" uid="uid://bjxdropwh405w" path="res://Creation/Sprites/Start/Timeline 1_0021.png" id="22_r62e6"]
 [ext_resource type="Texture2D" uid="uid://002bjx1f3kd2" path="res://Creation/Sprites/Start/Timeline 1_0022.png" id="23_foxn7"]
 [ext_resource type="Script" path="res://Creation/Creation.gd" id="24_gwv2s"]
+[ext_resource type="Texture2D" uid="uid://bljjonfj6utvo" path="res://clip/whimsy.png" id="31_rwjkq"]
+[ext_resource type="Texture2D" uid="uid://cdhveolcfe7k4" path="res://clip/you.png" id="32_gfir7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1tx3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aqi33")
+}],
+"loop": true,
+"name": &"bldblob",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2wwcn")
+}],
+"loop": true,
+"name": &"blob",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iqaai")
+}],
+"loop": true,
+"name": &"burden",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_l023o")
+}],
+"loop": true,
+"name": &"creature",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_buodn")
 }],
 "loop": true,
 "name": &"meat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ndom3")
+}],
+"loop": true,
+"name": &"plant",
 "speed": 5.0
 }, {
 "frames": [{
@@ -118,6 +165,22 @@ animations = [{
 "loop": true,
 "name": &"start",
 "speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_rwjkq")
+}],
+"loop": true,
+"name": &"whimsy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_gfir7")
+}],
+"loop": true,
+"name": &"you",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msstj"]
@@ -130,12 +193,11 @@ script = ExtResource("24_gwv2s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t1tx3")
-animation = &"soul"
-frame = 1
-frame_progress = 0.0531007
+animation = &"bldblob"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_msstj")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]

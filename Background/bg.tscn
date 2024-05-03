@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi4vpf5g15ud5"]
+[gd_scene load_steps=13 format=3 uid="uid://bi4vpf5g15ud5"]
 
 [ext_resource type="Texture2D" uid="uid://bk71t72m4vuvq" path="res://Background/begin_bg.png" id="1_gwosd"]
 [ext_resource type="Script" path="res://Background/bg.gd" id="1_nomgg"]
 [ext_resource type="Texture2D" uid="uid://cirvhsev7j7o1" path="res://clip/ocean.png" id="3_m2p6c"]
+[ext_resource type="Texture2D" uid="uid://bjsio1o5mhhlm" path="res://clip/purpose.png" id="4_6w3pn"]
 [ext_resource type="Texture2D" uid="uid://b5m7yy85mlp1g" path="res://clip/meathell.png" id="4_vogxo"]
+[ext_resource type="Texture2D" uid="uid://d0coltw3tschr" path="res://clip/fields.png" id="5_mf5of"]
+[ext_resource type="Texture2D" uid="uid://8vp7jlunih66" path="res://clip/heaven.png" id="7_ovsod"]
+[ext_resource type="Texture2D" uid="uid://bd0a7i2m1mhqm" path="res://clip/mirror_bg.png" id="8_fw7kf"]
+[ext_resource type="Texture2D" uid="uid://cv8eshn3dyxlu" path="res://clip/doomed_bg.png" id="9_en4pf"]
+[ext_resource type="Texture2D" uid="uid://ucrub4gtxljo" path="res://clip/hell.png" id="10_gb2os"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhbo8"]
 animations = [{
@@ -15,7 +21,25 @@ animations = [{
 "texture": ExtResource("3_m2p6c")
 }, {
 "duration": 1.0,
+"texture": ExtResource("4_6w3pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mf5of")
+}, {
+"duration": 1.0,
 "texture": ExtResource("4_vogxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ovsod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fw7kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_en4pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gb2os")
 }],
 "loop": true,
 "name": &"default",
@@ -38,3 +62,4 @@ shape = SubResource("RectangleShape2D_gyh4c")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

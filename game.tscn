@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgv6qtuurdffh"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_acj1b"]
-[ext_resource type="PackedScene" uid="uid://bjp2bbps1ywj0" path="res://Creation/Creation.tscn" id="1_vmol8"]
-[ext_resource type="PackedScene" uid="uid://bi4vpf5g15ud5" path="res://Background/bg.tscn" id="2_174lg"]
+[ext_resource type="Script" path="res://Game.gd" id="1_3by6f"]
+[ext_resource type="PackedScene" uid="uid://bi4vpf5g15ud5" path="res://Background/bg.tscn" id="2_h4kqy"]
+[ext_resource type="PackedScene" uid="uid://bjp2bbps1ywj0" path="res://Creation/Creation.tscn" id="3_d464s"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_acj1b")
+script = ExtResource("1_3by6f")
 
-[node name="bg" parent="." instance=ExtResource("2_174lg")]
+[node name="bg" parent="." instance=ExtResource("2_h4kqy")]
 position = Vector2(599, 401)
 
-[node name="Area2D" parent="." instance=ExtResource("1_vmol8")]
+[node name="creation" parent="." instance=ExtResource("3_d464s")]
 position = Vector2(587, 304)
 
 [node name="Hands" type="Node2D" parent="."]
